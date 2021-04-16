@@ -16,6 +16,7 @@ public abstract class Game
 {
     private final String gameName;//the title of the game
     private ArrayList <Player> players;// the players of the game
+    private GroupOfCards pile; // the pile of cards that will be dealt to the users
     
     public Game(String givenName)
     {
