@@ -5,6 +5,8 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author abdullahirum
@@ -20,6 +22,30 @@ public class GoFishPlayer extends Player{
     @Override
     public void play() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void receiveCards(ArrayList<Card> cards) {
+        if(hand == null) {
+            hand = new GroupOfCards(cards.size());
+        }
+        hand.addCards(cards);
+    }
+    
+    public ArrayList<Card> requestCards(int book) {
+        // check if there is
+        return hand.getBook(book);
+    }
+    
+    public int countBooks() {
+        return hand.countCompleteBooks();
+    }
+    
+    public void showHand() {
+        hand.printCards();
+    }
+    
+    public Book getMissingBook() {
+        return hand.getMissingBook();
     }
     
 }
